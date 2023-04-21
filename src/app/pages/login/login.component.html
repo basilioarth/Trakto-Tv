@@ -1,0 +1,18 @@
+<div class="main-container">
+    <div class="form-container">
+        <img src = "../../../assets/logo.svg" alt="Trakto logo"/>
+        <h1>Olá, faça login em sua conta.</h1>
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)" ngNativeValidate>
+            <div class="form-group">
+                <input name="email" type="email" class="form-control" id="emailInput" placeholder="Digite o seu e-mail" required="true" autocomplete="off" ngModel>
+                <label for="emailInput">Email</label>
+            </div>
+            <div class="form-group">
+                <input name="password" type="password" class="form-control" id="passwordInput" placeholder="Digite a sua senha" required="true" autocomplete="off" ngModel>
+                <label for="passwordInput">Senha</label>
+            </div>
+            <button *ngIf="!isSubmitting" type="submit">Entrar</button>
+            <button *ngIf="isSubmitting" type="submit"><i class="fa-solid fa-circle-notch fa-spin"></i>Entrando...</button>
+        </form>
+    </div>
+</div>

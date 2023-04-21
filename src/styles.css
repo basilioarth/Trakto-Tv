@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+:root {
+    --background-default: #EFF2F9;
+    --neutral-white: #FFFFFF;
+    --neutral-ligth: #E4EBFB;
+    --neutral-clear: #D0DAEF;
+    --neutral-darkest: #04183E;
+    --brand-trakto-ligth: #66AFFF;
+    --brand-trakto: #0079FF;
+    --brand-green: #1DC763;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: var(--background-default);
+}
