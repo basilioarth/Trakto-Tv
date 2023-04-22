@@ -6,7 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { LoginModule } from './pages/login/login.module';
+import { PagesModule } from './pages/pages.module';
 
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 
@@ -18,7 +18,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    LoginModule,
+    PagesModule,
     HttpClientModule
   ],
   providers: [
