@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import {NgForm} from '@angular/forms';
+import { NgForm } from '@angular/forms';
+
+import { LoginReturn } from 'src/app/interfaces/login-return.interface';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,13 +12,23 @@ import {NgForm} from '@angular/forms';
 export class LoginComponent {
   public isSubmitting: boolean;
 
-  constructor(){
+  constructor(private authService: AuthService){
     this.isSubmitting = false;
   }
 
   onSubmit(f: NgForm){
     this.isSubmitting = true;
-    console.log(f.value);
-    setTimeout(() => this.isSubmitting = false, 5000);
+    
+    this.authService.signin(f.value.email, f.value.password).subscribe({
+      next: (response: string) => {
+        var formatedResponse: LoginReturn = JSON.parse(response);
+        this.authService.storageItem('access_token', formatedResponse.access_token);
+        this.authService.storageItem('refresh_token', formatedResponse.refresh_token);
+      },
+      error: (err) => {
+        console.log(err);
+      },
+      complete: () => {this.isSubmitting = false}
+    });
   }
 }
