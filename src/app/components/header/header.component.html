@@ -1,0 +1,24 @@
+<div class="container" [ngStyle]="{'background-color': backgroundColor}">
+    <div class="logo-container">
+        <img src="../../../assets/trakto-edu-logo.png" alt="Trakto edu logo">
+        <div *ngIf="showChangeEnvironmentOption" class="change-environment" (click)="changeEnvironment()">
+            <img class="logout-icon" src="../../../assets/logout.svg" alt="">
+            <div class="logout-text">Trocar de ambiente</div>
+        </div>
+    </div>
+    <div class="infos">
+        <div class="date-container">
+            <img src="../../../assets/calendar.svg" alt="calendar logo">
+            <div class="date-text">{{date}}</div>
+        </div>
+        <div class="line2"></div>
+        <img class="notification" src="../../../assets/notification.svg" alt="notification logo">
+        <div class="line1"></div>
+        <div class="avatar-container">
+            <div class="avatar-icon">
+                <img src="../../../assets/avatar-icon.png" alt="avatar">
+            </div>
+            <img class="dropdown-icon" src="../../../assets/dropdown-arrow-icon.svg" alt="">
+        </div>
+    </div>
+</div>

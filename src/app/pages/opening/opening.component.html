@@ -1,1 +1,65 @@
-<p>opening works!</p>
+<div class="main-container">
+    <header-component [date]="getCurrentDate()" [backgroundColor]="'var(--background-darkest)'" [showChangeEnvironmentOption]="false"></header-component>
+    <div class="menus-container">
+        <div class="menu" style="cursor: pointer;" (click)="onClick()">
+            <div class="menu-header">
+                <div class="menu-title">Material didático</div>
+                <div id="material-line" class="line"></div>
+            </div>
+            <div class="menu-icon-container">
+                <div class="menu-icon-container-intern">
+                    <div class="rectangle">
+                        <div class="elipse" id="material-elipse">
+                            <div id="material-icon"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="menu-header">
+                <div class="menu-title">Quiz</div>
+                <div id="quiz-line" class="line"></div>
+            </div>
+            <div class="menu-icon-container">
+                <div class="menu-icon-container-intern">
+                    <div class="rectangle">
+                        <div class="elipse" id="quiz-elipse">
+                            <div id="quiz-icon"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="menu-header">
+                <div class="menu-title">Desenho</div>
+                <div id="desenho-line" class="line"></div>
+            </div>
+            <div class="menu-icon-container">
+                <div class="menu-icon-container-intern">
+                    <div class="rectangle">
+                        <div class="elipse" id="desenho-elipse">
+                            <div id="desenho-icon"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="menu-header">
+                <div class="menu-title">Youtube</div>
+                <div id="youtube-line" class="line"></div>
+            </div>
+            <div class="menu-icon-container">
+                <div class="menu-icon-container-intern">
+                    <div class="rectangle">
+                        <div class="elipse" id="youtube-elipse">
+                            <div id="youtube-icon"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

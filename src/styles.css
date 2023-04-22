@@ -3,16 +3,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
 :root {
     --background-default: #EFF2F9;
+    --background-solid: #1D1B1B;
+    --background-dark: #464141;
+    --background-darkest: #252323;
     --neutral-white: #FFFFFF;
     --neutral-ligth: #E4EBFB;
     --neutral-clear: #D0DAEF;
+    --neutral-cloudy: #7183A6;
     --neutral-darkest: #04183E;
     --brand-trakto-ligth: #66AFFF;
     --brand-trakto: #0079FF;
     --brand-green: #1DC763;
+    --red-default: #FF0000;
+    --purple-default: #F6B5FF;
+    --red-solid: #FF6868;
+    --pink-solid: #FFBFBF;
+    --blue-solid:  #4173CD;
+    --purple-solid: #F4AEFF;
+    --blue-light: #C2D8FF;
+    --blue-sky: #80ABF9;
+    --green-light: #91DEA2;
+    --yellow-light: #FFCF60;
 }
 
 html {

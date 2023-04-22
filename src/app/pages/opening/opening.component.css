@@ -1,0 +1,221 @@
+.main-container {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+    
+    position: absolute;
+
+    background: url(../../../assets/background-image.png);
+    background-color: var(--background-solid);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.menus-container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.menu {
+    width: 377px;
+    height: 473px;
+
+    padding: 0px;
+    gap: 32px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: transparent
+}
+
+.menu-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+
+    width: 377px;
+    height: 68px;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.menu-title {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48.92px;
+    line-height: 130%;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: var(--neutral-white);
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    white-space: nowrap;
+}
+
+.menu-header .line {
+    width: 28px;
+    height: 4px;
+
+    background: var(--red-default);
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+#material-line {
+    background: var(--blue-solid);
+}
+
+#quiz-line {
+    background: var(--brand-green);
+}
+
+#desenho-line {
+    background: var(--purple-default);
+}
+
+#youtube-line {
+    background: var(--red-default);
+}
+
+.menu-icon-container {
+    width: 100%;
+    height: 373px;
+
+    filter: drop-shadow(0px 24px 48px rgba(0, 0, 0, 0.08));
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.menu-icon-container-intern {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-icon-container-intern .rectangle {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background: var(--background-dark);
+    border-radius: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.elipse {
+    width: 311px;
+    height: 311px;
+
+    padding: 0;
+    margin: 0;
+
+    border-radius: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#material-elipse {
+    background-color: var(--blue-light);
+    border: 0.5px solid var(--blue-sky);
+}
+
+#quiz-elipse {
+    background-color: var(--green-light);
+    border: 0.5px solid var(--yellow-light);
+}
+
+#desenho-elipse {
+    background-color: var(--purple-solid);
+    border: 0.5px solid var(--yellow-light);
+}
+
+#youtube-elipse {
+    background-color: var(--pink-solid);
+    border: 0.5px solid var(--red-solid);
+}
+
+#material-icon {
+    width: 292px;
+    height: 292px;
+
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: -10px;
+    margin-left: -10px;
+
+    background: url(../../../assets/books-logo.png);
+    background-size: 292px;
+    background-repeat: no-repeat;
+}
+
+#quiz-icon {
+    width: 262px;
+    height: 262px;
+
+    background: url(../../../assets/medal-logo.png);
+    background-size: 262px;
+    background-repeat: no-repeat;
+}
+
+
+#desenho-icon {
+    width: 292px;
+    height: 292px;
+
+    background: url(../../../assets/paint-logo.png);
+    background-size: 292px;
+    background-repeat: no-repeat;
+}
+
+#youtube-icon {
+    width: 170px;
+    height: 125px;
+
+    background: url(../../../assets/youtube-logo.png);
+    background-size: 170px;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 1700px) {
+    
+}
