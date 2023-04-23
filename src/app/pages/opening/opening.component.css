@@ -10,11 +10,14 @@
     width: 100%;
     height: 100%;
     
+    min-width: 414px;
+    min-height: 896px;
+    
     position: absolute;
 
     background: url(../../../assets/background-image.png);
     background-color: var(--background-solid);
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
@@ -22,6 +25,7 @@
 
 .menus-container {
     width: 100%;
+    height: 100%;
 
     display: flex;
     flex-direction: row;
@@ -30,9 +34,34 @@
     justify-content: space-evenly;
 }
 
+.menu-columns {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#column1 {
+    margin-right: -42px;
+}
+
+#column2 {
+    margin-left: -42px;
+}
+
 .menu {
-    width: 377px;
-    height: 473px;
+    max-width: 377px;
+    max-height: 473px;
+
+    min-width: 277px;
+    min-height: 373px;
 
     padding: 0px;
     gap: 32px;
@@ -216,6 +245,130 @@
     background-repeat: no-repeat;
 }
 
-@media (max-width: 1700px) {
+@media (max-width: 1880px) {
+    .menu-columns {
+        height: 100%;
+        max-width: 100vw;
+
+        padding-top: 76px;
+        flex-direction: column;
+        
+        margin: 10px;
+
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    #column1 {
+        margin-right: 0px;
+    }
     
+    #column2 {
+        margin-left: 0px;
+    }
+
+    .menu {
+        width: 277px;
+        height: 373px;
+    }
+
+    .menu-header {
+        width: 177px;
+        height: 58px;
+    }
+
+    .menu-title {
+        font-size: 38.92px;
+        line-height: 130%;
+    }
+
+    .menu-icon-container {
+        height: 273px;
+    }
+
+    .elipse {
+        width: 211px;
+        height: 211px;
+    }
+
+    #material-icon {
+        width: 192px;
+        height: 192px;
+    
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-bottom: -5px;
+        margin-left: -5px;
+    
+        background: url(../../../assets/books-logo.png);
+        background-size: 192px;
+        background-repeat: no-repeat;
+    }
+    
+    #quiz-icon {
+        width: 162px;
+        height: 162px;
+    
+        background: url(../../../assets/medal-logo.png);
+        background-size: 162px;
+        background-repeat: no-repeat;
+    }
+    
+    
+    #desenho-icon {
+        width: 192px;
+        height: 192px;
+    
+        background: url(../../../assets/paint-logo.png);
+        background-size: 192px;
+        background-repeat: no-repeat;
+    }
+    
+    #youtube-icon {
+        width: 110px;
+        height: 77px;
+    
+        background: url(../../../assets/youtube-logo.png);
+        background-size: 110px;
+        background-repeat: no-repeat;
+    }
+}
+
+@media (max-width: 880px) {
+    .menus-container {
+        height: 100%;
+        max-width: 100vw;
+
+        padding-top: 76px;
+
+        display: flex;
+        flex-direction: column;
+    
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .menu-columns {
+        height: 100%;
+        max-width: 100vw;
+        padding-top: 0px;
+        flex-direction: column;
+        
+        margin: 10px;
+
+        align-items: center;
+        justify-content: space-evenly;
+    }
+}
+
+@media (max-height: 901px){
+    .main-container {
+        position: relative;
+    }
+}
+
+@media (max-width: 880px) and (min-height: 901px){
+    .main-container {
+        position: relative;
+    }
 }
