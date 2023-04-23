@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-
-import * as moment from 'moment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-opening',
@@ -8,12 +7,9 @@ import * as moment from 'moment';
   styleUrls: ['./opening.component.css']
 })
 export class OpeningComponent {
-  onClick(){
-    alert("Clicou!");
-  }
+  constructor(private router: Router){}
 
-  getCurrentDate(): string{
-    var date = moment();
-    return date.format('DD/MM/YYYY');
+  navigateToCourseware(){
+    this.router.navigate(['courseware']);
   }
 }

@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
 :root {
@@ -14,9 +15,11 @@
     --neutral-ligth: #E4EBFB;
     --neutral-clear: #D0DAEF;
     --neutral-cloudy: #7183A6;
+    --neutral-dark: #354564;
     --neutral-darkest: #04183E;
     --brand-trakto-ligth: #66AFFF;
     --brand-trakto: #0079FF;
+    --brand-trakto-app: #4743FF;
     --brand-green: #1DC763;
     --red-default: #FF0000;
     --purple-default: #F6B5FF;
@@ -28,6 +31,8 @@
     --blue-sky: #80ABF9;
     --green-light: #91DEA2;
     --yellow-light: #FFCF60;
+    --red-light: #FF0100;
+    --gray-light: #848484;
 }
 
 html {

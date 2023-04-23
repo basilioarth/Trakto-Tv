@@ -1,24 +1,29 @@
 <div class="container" [ngStyle]="{'background-color': backgroundColor}">
     <div class="logo-container">
-        <img src="../../../assets/trakto-edu-logo.png" alt="Trakto edu logo">
-        <div *ngIf="showChangeEnvironmentOption" class="change-environment" (click)="changeEnvironment()">
+        <img *ngIf="theme == 'dark'" src="../../../assets/trakto-edu-dark-logo.png" alt="Trakto edu logo">
+        <img *ngIf="theme == 'ligth'" src="../../../assets/trakto-edu-ligth-logo.png" alt="Trakto edu logo">
+        <div *ngIf="showChangeEnvironmentOption" class="change-environment" (click)="changeEnvironment()" [ngStyle]="{'border-color': color}">
             <img class="logout-icon" src="../../../assets/logout.svg" alt="">
-            <div class="logout-text">Trocar de ambiente</div>
+            <div class="logout-text" [ngStyle]="{'color': color}">Trocar de ambiente</div>
         </div>
     </div>
     <div class="infos">
         <div class="date-container">
-            <img src="../../../assets/calendar.svg" alt="calendar logo">
-            <div class="date-text">{{date}}</div>
+            <img *ngIf="theme == 'dark'" src="../../../assets/calendar-dark.svg" alt="calendar logo">
+            <img *ngIf="theme == 'ligth'" src="../../../assets/calendar-ligth.svg" alt="calendar logo">
+            <div class="date-text" [ngStyle]="{'color': color}">{{date}}</div>
         </div>
-        <div class="line2"></div>
-        <img class="notification" src="../../../assets/notification.svg" alt="notification logo">
-        <div class="line1"></div>
+        <div class="line2" [ngStyle]="{'border-color': color}"></div>
+        <img *ngIf="theme == 'dark'" class="notification" src="../../../assets/notification-dark.svg" alt="notification logo">
+        <img *ngIf="theme == 'ligth'" class="notification" src="../../../assets/notification-ligth.svg" alt="notification logo">
+        <div class="line1" [ngStyle]="{'border-color': color}"></div>
         <div class="avatar-container">
             <div class="avatar-icon">
-                <img src="../../../assets/avatar-icon.png" alt="avatar">
+                <img *ngIf="theme == 'dark'" src="../../../assets/avatar-icon-dark.png" alt="avatar">
+                <img *ngIf="theme == 'ligth'" src="../../../assets/avatar-icon-ligth.png" alt="avatar">
             </div>
-            <img class="dropdown-icon" src="../../../assets/dropdown-arrow-icon.svg" alt="">
+            <img *ngIf="theme == 'dark'" class="dropdown-icon" src="../../../assets/dropdown-arrow-icon-dark.svg" alt="">
+            <img *ngIf="theme == 'ligth'" class="dropdown-icon" src="../../../assets/dropdown-arrow-icon-ligth.svg" alt="">
         </div>
     </div>
 </div>

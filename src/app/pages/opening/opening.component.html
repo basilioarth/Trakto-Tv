@@ -1,8 +1,8 @@
 <div class="main-container">
-    <header-component [date]="getCurrentDate()" [backgroundColor]="'var(--background-darkest)'" [showChangeEnvironmentOption]="true"></header-component>
+    <header-component [theme]="'dark'" [backgroundColor]="'var(--background-darkest)'" [showChangeEnvironmentOption]="false"></header-component>
     <div class="menus-container">
         <div id="column1" class="menu-columns">
-            <div class="menu" style="cursor: pointer;" (click)="onClick()">
+            <div class="menu" style="cursor: pointer;" (click)="navigateToCourseware()">
                 <div class="menu-header">
                     <div class="menu-title">Material didático</div>
                     <div id="material-line" class="line"></div>

@@ -1,0 +1,55 @@
+<header-component [theme]="'ligth'" [backgroundColor]="'var(--neutral-white)'" [showChangeEnvironmentOption]="true"></header-component>
+<div class="main-container">
+    <div class="banner"></div>
+    <div class="courseware-container">
+        <div class="header">
+            <div class="infos">
+                <div class="controls">
+                    <div class="week">Semana 06/02 até 28/02</div>
+                    <div class="icons">
+                        <img src="../../../assets/arrow-left.svg" alt="Voltar" (click)="moveToLeft('courseware-scroll-container', -1000, 0)">
+                        <img src="../../../assets/arrow-right.svg" alt="Prosseguir" (click)="moveToRigth('courseware-scroll-container', 1000, 0)">
+                    </div>
+                </div>
+                <div class="texts">
+                    <div class="title">Material Didático</div>
+                    <div class="subtitle">Acesse suas últimas apresentações de aula.</div>
+                </div>
+            </div>
+            <div class="button">Ver todo conteúdo</div>
+        </div>
+        <div id="courseware-scroll-container" class="scroll-container">
+            <slide-thumbnail *ngFor="let design of designsList" [designId]="getDesignId(design)" [srcImage]="getDesignThumbnail(design)" [numberOfPages]="getDesignNumberOfPages(design)" [title]="getDesignTitle(design)"></slide-thumbnail>
+        </div>
+    </div>
+    <div class="youtube-container">
+        <div class="header">
+            <div class="infos">
+                <div class="controls">
+                    <div class="week">Semana 06/02 até 28/02</div>
+                    <div class="icons">
+                        <img src="../../../assets/arrow-left.svg" alt="Voltar" (click)="moveToLeft('youtube-scroll-container', -1000, 0)">
+                        <img src="../../../assets/arrow-right.svg" alt="Prosseguir" (click)="moveToRigth('youtube-scroll-container', 1000, 0)">
+                    </div>
+                </div>
+                <div class="texts">
+                    <div class="title">Vídeo aulas</div>
+                    <div class="subtitle">Complemente os estudos assistindo o conteúdo de forma dinâmica.</div>
+                </div>
+            </div>
+            <div class="button">
+                <img src="../../../assets/icon-video.svg" alt="">
+                Abrir no Youtube
+            </div>
+        </div>
+        <div id="youtube-scroll-container" class="scroll-container">
+            <div id="thumbnail-1" class="youtube-thumbnail"></div>
+            <div id="thumbnail-2" class="youtube-thumbnail"></div>
+            <div id="thumbnail-3" class="youtube-thumbnail"></div>
+            <div id="thumbnail-4" class="youtube-thumbnail"></div>
+            <div id="thumbnail-5" class="youtube-thumbnail"></div>
+            <div id="thumbnail-6" class="youtube-thumbnail"></div>
+            <div id="thumbnail-7" class="youtube-thumbnail"></div>
+        </div>
+    </div>
+</div>
