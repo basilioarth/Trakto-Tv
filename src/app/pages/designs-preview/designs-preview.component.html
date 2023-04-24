@@ -1,0 +1,12 @@
+<header-component [theme]="'ligth'" [backgroundColor]="'var(--neutral-white)'" [showChangeEnvironmentOption]="true"></header-component>
+<div class="main-container">
+    <div class="content-container ">
+        <div class="texts-container">
+            <div class="title">Material didático</div>
+            <div class="subtitle">Acesse suas últimas apresentações de aula.</div>
+        </div>
+        <div class="content">
+            <slide-thumbnail *ngFor="let design of designsList" [designId]="getDesignId(design)" [srcImage]="getDesignThumbnail(design)" [numberOfPages]="getDesignNumberOfPages(design)" [title]="getDesignTitle(design)"></slide-thumbnail>
+        </div>
+    </div>
+</div>

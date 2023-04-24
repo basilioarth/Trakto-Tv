@@ -23,6 +23,12 @@ export class DocumentService {
     return this.http.get<DesignsListPage>(this.documentURL, { params: params});
   }
 
+  allDesigns(order_by: string, order_orientation: string): Observable<DesignsListPage>{
+    let params = new HttpParams().set("order_by", order_by).set("order_orientation", order_orientation);
+
+    return this.http.get<DesignsListPage>(this.documentURL, { params: params});
+  }
+
   design(id: string): Observable<HttpResponse<any>>{
     return this.http.get<HttpResponse<any>>(`${this.documentURL}/${id}`);
   }

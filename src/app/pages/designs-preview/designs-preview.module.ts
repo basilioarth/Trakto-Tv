@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CoursewareComponent } from './courseware.component';
+import { DesignsPreviewComponent } from './designs-preview.component';
 
 import { HeaderModule } from 'src/app/components/header/header.module';
 import { SlideThumbnailModule } from 'src/app/components/slide-thumbnail/slide-thumbnail.module';
 
 @NgModule({
-  declarations: [CoursewareComponent],
+  declarations: [DesignsPreviewComponent],
   imports: [
     CommonModule,
     HeaderModule,
     SlideThumbnailModule
   ],
-  exports: [CoursewareComponent]
+  exports: [DesignsPreviewComponent]
 })
-export class CoursewareModule { }
+export class DesignsPreviewModule { }
