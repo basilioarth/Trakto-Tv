@@ -15,17 +15,12 @@
 
 .content-container {
     width: 100%;
-    height: auto;
-    min-height: 500px;
+    min-width: 398px;
 
     padding: 56px 72px 56px 72px;
 
     background: var(--neutral-white);
     border-radius: 8px;
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
 }
 
 .texts-container {
@@ -35,19 +30,14 @@
     padding: 0px;
     gap: 8px;
 
-    width: 645px;
+    width: 100%;
     height: 55px;
 
     margin-bottom: 28px;
-
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
 }
 
 .texts-container .title {
-    width: 645px;
+    width: auto;
     height: 28px;
 
     font-family: 'Roboto';
@@ -57,14 +47,10 @@
     line-height: 28px;
 
     color: var(--neutral-dark);
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
 }
 
 .texts-container .subtitle {
-    width: 645px;
+    width: auto;
     height: 19px;
 
     font-family: 'Roboto';
@@ -74,32 +60,83 @@
     line-height: 19px;
 
     color: var(--neutral-cloudy);
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
 }
 
 .content {
     display: grid;
     grid-template-columns: 310px 310px 310px 310px 310px;
-    gap: 32px;
+    justify-content: space-between;
+
+    position: relative;
 }
 
-/*
-@media (max-width: 1920px){
+@media (max-width: 1900px){
     .content {
         display: grid;
         grid-template-columns: 310px 310px 310px 310px;
-        gap: 7.9%;
+        justify-content: space-between;
+
+        position: relative;
     }
 }
 
-@media (max-width: 1880px){
+@media (max-width: 1596px){
     .content {
         display: grid;
-        grid-template-columns: 310px 310px 310px 310px;
-        gap: 5.9%;
+        grid-template-columns: 310px 310px 310px;
+        justify-content: space-between;
+
+        position: relative;
     }
 }
-*/
+
+@media (max-width: 1256px){
+    .content {
+        display: grid;
+        grid-template-columns: 310px 310px;
+        justify-content: space-between;
+
+        position: relative;
+    }
+}
+
+@media (max-width: 912px){
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        position: relative;
+    }
+}
+
+@media (max-width: 690px){
+    .content-container {
+        padding: 26px 42px 26px 42px;
+    }
+}
+
+@media (max-width: 393px){
+    .main-container {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 375px){
+    .main-container {
+        margin-left: 18px;
+    }
+}
+
+@media (max-width: 360px){
+    .main-container {
+        margin-left: 28px;
+    }
+}
+
+@media (max-width: 300px){
+    .main-container {
+        margin-left: 66px;
+    }
+}
