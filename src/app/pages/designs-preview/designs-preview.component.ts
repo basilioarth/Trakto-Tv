@@ -10,8 +10,16 @@ import { DesignsListPage } from 'src/app/interfaces/designs-list-page.interface'
 })
 export class DesignsPreviewComponent implements OnInit {
   designsList: Design[] | [];
+
+  loadingDate: boolean;
+  notFound: boolean;
+  internalError: boolean;
+
   constructor(private documentService: DocumentService){
     this.designsList = [];
+    this.loadingDate = false;
+    this.notFound = false;
+    this.internalError = false;
   }
 
   ngOnInit(): void {
@@ -19,14 +27,22 @@ export class DesignsPreviewComponent implements OnInit {
   }
 
   loadAllDesigns(){
+    this.loadingDate = true;
     this.documentService.listAllDesigns('title', 'desc').subscribe({
       next: (response: DesignsListPage) => {
         this.designsList = response.data;
       },
       error: (err) => {
         console.log(err);
+        this.loadingDate = false;
+        this.notFound = false;
+        this.internalError = true;
       },
-      complete: () => {}
+      complete: () => {
+        this.loadingDate = false;
+        this.designsList.length == 0 ? this.notFound = true : this.notFound = false;
+        this.internalError = false;
+      }
     });
   }
 }

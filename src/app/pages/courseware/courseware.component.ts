@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { DocumentService } from 'src/app/services/document/document.service';
@@ -13,7 +13,7 @@ import { startOfWeek, endOfWeek } from 'date-fns';
   templateUrl: './courseware.component.html',
   styleUrls: ['./courseware.component.css']
 })
-export class CoursewareComponent implements OnInit, AfterViewInit {
+export class CoursewareComponent implements OnInit {
   private coursewareScrollView: HTMLElement | null = null;
   private youtubeScrollView: HTMLElement | null = null;
 
@@ -21,11 +21,17 @@ export class CoursewareComponent implements OnInit, AfterViewInit {
   endOfWeek: string;
   designsList: Design[] | [];
 
+  loadingDate: boolean;
+  notFound: boolean;
+  internalError: boolean;
 
   constructor(private documentService: DocumentService, private router: Router){
     this.startOfWeek = '';
     this.endOfWeek = '';
     this.designsList = [];
+    this.loadingDate = false;
+    this.notFound = false;
+    this.internalError = false;
   }
 
   ngOnInit(): void {
@@ -33,36 +39,40 @@ export class CoursewareComponent implements OnInit, AfterViewInit {
     this.loadRecentlyEdited();
   }
 
-  ngAfterViewInit(): void {
-    this.coursewareScrollView = document.getElementById('courseware-scroll-container');
-    this.youtubeScrollView = document.getElementById('youtube-scroll-container');
-  }
-
   loadRecentlyEdited(){
+    this.loadingDate = true;
     this.documentService.listAllDesignsPerPage(10, 'updated_at', 'desc').subscribe({
       next: (response: DesignsListPage) => {
         this.designsList = response.data;
       },
       error: (err) => {
         console.log(err);
+        this.loadingDate = false;
+        this.notFound = false;
+        this.internalError = true;
       },
-      complete: () => {}
+      complete: () => {
+        this.loadingDate = false;
+        this.designsList.length == 0 ? this.notFound = true : this.notFound = false;
+        this.internalError = false;
+      }
     });
   }
 
   moveToRight(elementId: string, x: number, y: number){
     if(elementId == 'courseware-scroll-container'){
-      this.coursewareScrollView?.scrollBy({ top: y, left: x, behavior : "smooth" });
+      console.log(this.coursewareScrollView)
+      document.getElementById('courseware-scroll-container')?.scrollBy({ top: y, left: x, behavior : "smooth" });
     } else {
-      this.youtubeScrollView?.scrollBy({ top: y, left: x, behavior : "smooth" });
+      document.getElementById('youtube-scroll-container')?.scrollBy({ top: y, left: x, behavior : "smooth" });
     }
   }
 
   moveToLeft(elementId: string, x: number, y: number){
     if(elementId == 'courseware-scroll-container'){
-      this.coursewareScrollView?.scrollBy({ top: y, left: x, behavior : "smooth" });
+      document.getElementById('courseware-scroll-container')?.scrollBy({ top: y, left: x, behavior : "smooth" });
     } else {
-      this.youtubeScrollView?.scrollBy({ top: y, left: x, behavior : "smooth" });
+      document.getElementById('youtube-scroll-container')?.scrollBy({ top: y, left: x, behavior : "smooth" });
     }
   }
 

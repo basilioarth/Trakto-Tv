@@ -5,7 +5,10 @@
             <div class="title">Material didático</div>
             <div class="subtitle">Acesse suas últimas apresentações de aula.</div>
         </div>
-        <div class="content">
+        <loading-data *ngIf="loadingDate"></loading-data>
+        <not-found *ngIf="notFound"></not-found>
+        <internal-error *ngIf="internalError"></internal-error>
+        <div *ngIf="!loadingDate && !notFound && !internalError" class="content">
             <slide-thumbnail *ngFor="let design of designsList" [design]="design"></slide-thumbnail>
         </div>
     </div>

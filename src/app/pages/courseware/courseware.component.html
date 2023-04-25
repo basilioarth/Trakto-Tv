@@ -18,7 +18,10 @@
             </div>
             <div class="button" (click)="navigateToPreviewList()">Ver todo conteúdo</div>
         </div>
-        <div id="courseware-scroll-container" class="scroll-container" >
+        <loading-data *ngIf="loadingDate"></loading-data>
+        <not-found *ngIf="notFound"></not-found>
+        <internal-error *ngIf="internalError"></internal-error>
+        <div *ngIf="!loadingDate && !notFound && !internalError" id="courseware-scroll-container" class="scroll-container" >
             <slide-thumbnail *ngFor="let design of designsList" [design]="design"></slide-thumbnail>
         </div>
     </div>
