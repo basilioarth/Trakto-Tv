@@ -50,7 +50,7 @@ export class CoursewareComponent implements OnInit, AfterViewInit {
     });
   }
 
-  moveToRigth(elementId: string, x: number, y: number){
+  moveToRight(elementId: string, x: number, y: number){
     if(elementId == 'courseware-scroll-container'){
       this.coursewareScrollView?.scrollBy({ top: y, left: x, behavior : "smooth" });
     } else {
