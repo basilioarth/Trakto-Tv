@@ -19,7 +19,7 @@
             <div class="button" (click)="navigateToPreviewList()">Ver todo conteúdo</div>
         </div>
         <div id="courseware-scroll-container" class="scroll-container">
-            <slide-thumbnail *ngFor="let design of designsList" [designId]="getDesignId(design)" [srcImage]="getDesignThumbnail(design)" [numberOfPages]="getDesignNumberOfPages(design)" [title]="getDesignTitle(design)"></slide-thumbnail>
+            <slide-thumbnail *ngFor="let design of designsList" [design]="design"></slide-thumbnail>
         </div>
     </div>
     <div class="youtube-container">

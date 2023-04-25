@@ -1,31 +1,56 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Design } from 'src/app/interfaces/design.interface';
 
 @Component({
   selector: 'slide-thumbnail',
   templateUrl: './slide-thumbnail.component.html',
   styleUrls: ['./slide-thumbnail.component.css']
 })
-export class SlideThumbnailComponent {
+export class SlideThumbnailComponent implements OnInit {
   @Input()
-  designId: string;
+  design: Design | null;
 
-  @Input()
-  srcImage: string;
+  designId: string | undefined;
 
-  @Input()
-  numberOfPages: number;
+  srcImage: string | undefined;
 
-  @Input()
-  title: string;
+  numberOfPages: number | undefined;
+
+  title: string | undefined;
 
   constructor(){
+    this.design = null;
     this.designId = '';
     this.srcImage = '';
     this.numberOfPages = 0;
     this.title = '';
   }
 
-  editDesign(){
-    window.open(`https://editor.trakto.io/editor/${this.designId}`, '_blank');
+  ngOnInit(): void {
+    this.setDesignId();
+    this.setDesignTitle();
+    this.setDesignThumbnail();
+    this.setDesignNumberOfPages();
+  }
+
+  setDesignId() {
+    this.designId = this.design?.id;
+  }
+
+  setDesignTitle() {
+    this.title = this.design?.title;
+  }
+
+  setDesignThumbnail() {
+    this.srcImage =  `url('${this.design?.cover.raw}')`;
+  }
+
+  setDesignNumberOfPages() {
+    this.numberOfPages = this.design?.pages.length;
+  }
+
+  presentDesign(){
+
+    window.open(`https://editor.trakto.io/presentation/p/${this.designId}`, '_blank');
   }
 }

@@ -6,7 +6,7 @@
             <div class="subtitle">Acesse suas últimas apresentações de aula.</div>
         </div>
         <div class="content">
-            <slide-thumbnail *ngFor="let design of designsList" [designId]="getDesignId(design)" [srcImage]="getDesignThumbnail(design)" [numberOfPages]="getDesignNumberOfPages(design)" [title]="getDesignTitle(design)"></slide-thumbnail>
+            <slide-thumbnail *ngFor="let design of designsList" [design]="design"></slide-thumbnail>
         </div>
     </div>
 </div>

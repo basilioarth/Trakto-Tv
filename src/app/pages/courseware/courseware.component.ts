@@ -50,22 +50,6 @@ export class CoursewareComponent implements OnInit, AfterViewInit {
     });
   }
 
-  getDesignId(design: Design): string {
-    return design.id;
-  }
-
-  getDesignThumbnail(design: Design):string {
-    return `url('${design.cover.raw}')`;
-  }
-
-  getDesignNumberOfPages(design: Design):number {
-    return design.pages.length;
-  }
-
-  getDesignTitle(design: Design):string {
-    return design.title;
-  }
-
   moveToRigth(elementId: string, x: number, y: number){
     if(elementId == 'courseware-scroll-container'){
       this.coursewareScrollView?.scrollBy({ top: y, left: x, behavior : "smooth" });

@@ -29,20 +29,4 @@ export class DesignsPreviewComponent implements OnInit {
       complete: () => {}
     });
   }
-
-  getDesignId(design: Design): string {
-    return design.id;
-  }
-
-  getDesignThumbnail(design: Design):string {
-    return `url('${design.cover.raw}')`;
-  }
-
-  getDesignNumberOfPages(design: Design):number {
-    return design.pages.length;
-  }
-
-  getDesignTitle(design: Design):string {
-    return design.title;
-  }
 }
