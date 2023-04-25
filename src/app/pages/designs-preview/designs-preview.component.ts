@@ -19,7 +19,7 @@ export class DesignsPreviewComponent implements OnInit {
   }
 
   loadAllDesigns(){
-    this.documentService.allDesigns('title', 'desc').subscribe({
+    this.documentService.listAllDesigns('title', 'desc').subscribe({
       next: (response: DesignsListPage) => {
         this.designsList = response.data;
       },

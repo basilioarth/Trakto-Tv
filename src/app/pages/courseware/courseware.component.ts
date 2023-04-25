@@ -39,7 +39,7 @@ export class CoursewareComponent implements OnInit, AfterViewInit {
   }
 
   loadRecentlyEdited(){
-    this.documentService.designs(10, 'updated_at', 'desc').subscribe({
+    this.documentService.listAllDesignsPerPage(10, 'updated_at', 'desc').subscribe({
       next: (response: DesignsListPage) => {
         this.designsList = response.data;
       },
