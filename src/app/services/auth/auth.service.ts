@@ -36,19 +36,19 @@ export class AuthService {
   }
 
   getItem(key: string){
-    return localStorage.getItem(key);
+    return sessionStorage.getItem(key);
   }
 
   storageItem(key: string, value: any){
-    localStorage.setItem(key, value);
+    sessionStorage.setItem(key, value);
   }
 
   removeItem(key: string){
-    localStorage.removeItem(key);
+    sessionStorage.removeItem(key);
   }
 
   clearStorage(){
-    localStorage.clear();
+    sessionStorage.clear();
   }
 
 }

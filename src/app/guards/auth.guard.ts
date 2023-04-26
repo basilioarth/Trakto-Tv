@@ -15,8 +15,8 @@ export class AuthGuard {
       if(this.permissions.canActivate()){
         return true;
       } else {
-        localStorage.getItem('access_token') ? alert("Seu acesso expirou! Por favor, faça o login novamente.") : alert("Acesso negado! Por favor, faça o login no sistema.");
-        localStorage.clear();
+        sessionStorage.getItem('access_token') ? alert("Seu acesso expirou! Por favor, faça o login novamente.") : alert("Acesso negado! Por favor, faça o login no sistema.");
+        sessionStorage.clear();
         return this.router.parseUrl('/login'); // is a UrlTree of the /login route.
       }
   }
