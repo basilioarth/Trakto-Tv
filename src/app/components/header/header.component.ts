@@ -1,8 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import * as moment from 'moment';
-
 @Component({
   selector: 'header-component',
   templateUrl: './header.component.html',
@@ -45,7 +43,7 @@ export class HeaderComponent implements OnInit {
   }
 
   getCurrentDate():string {
-    var date = moment();
-    return date.format('DD/MM/YYYY');
+    var date = new Date();
+    return date.toLocaleDateString('pt');
   }
 }
