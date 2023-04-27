@@ -1,27 +1,28 @@
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-import { ComponentsModule } from './components/components.module';
-import { PagesModule } from './pages/pages.module';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+
+import { ComponentsModule } from './components/components.module';
+
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-    NgbModule,
+    BrowserModule,
     ComponentsModule,
+    HttpClientModule,
+    NgbModule,
     PagesModule,
-    HttpClientModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}

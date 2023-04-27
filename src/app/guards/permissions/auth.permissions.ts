@@ -1,11 +1,12 @@
 import { Injectable } from "@angular/core";
+
 import { AuthService } from "src/app/services/auth/auth.service";
 
 @Injectable()
 export class AuthPermissions {
     constructor(private authService: AuthService){}
 
-    canActivate(): boolean{
+    canActivate(): boolean {
     let token = this.authService.getItem('access_token');
 
     if (token == null) {

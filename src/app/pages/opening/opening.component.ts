@@ -9,11 +9,11 @@ import { Router } from '@angular/router';
 export class OpeningComponent {
   constructor(private router: Router){}
 
-  navigateToCourseware(){
+  navigateToCourseware(): void {
     this.router.navigate(['courseware']);
   }
 
-  navigateToDrawing(){
+  navigateToDrawing(): void {
     this.router.navigate(['drawing']);
   }
 }

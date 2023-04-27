@@ -12,6 +12,6 @@
             <input [ngModel]="ctx.lineWidth" type="range" id="lineWidth" name="lineWidth" min="5" max="30" (ngModelChange)="changeLineWidth($event)">
             <label for="lineWidth">{{ctx.lineWidth}}px</label>
         </div>
-        <div class="clear-button" (click)="limpar()">Limpar</div>
+        <div class="clear-button" (click)="toClean()">Limpar</div>
     </div>
 </div>

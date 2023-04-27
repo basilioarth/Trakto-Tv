@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
 import { JwtHelperService  } from '@auth0/angular-jwt';
 
@@ -18,7 +18,7 @@ export class AuthService {
     this.authURL = environment.baseURL + 'auth';
   }
 
-  signin(email: string, password: string): Observable<string>{
+  signin(email: string, password: string): Observable<string> {
     let body = {
       "email": email,
       "password": password
@@ -31,23 +31,23 @@ export class AuthService {
     return this.http.post<string>(`${this.authURL}/signin`, body, options);
   }
 
-  isAuthenticationExpired(token: string):boolean {
+  isAuthenticationExpired(token: string): boolean {
     return this.helper.isTokenExpired(token);
   }
 
-  getItem(key: string){
+  getItem(key: string): string | null {
     return sessionStorage.getItem(key);
   }
 
-  storageItem(key: string, value: any){
+  storageItem(key: string, value: any): void {
     sessionStorage.setItem(key, value);
   }
 
-  removeItem(key: string){
+  removeItem(key: string): void {
     sessionStorage.removeItem(key);
   }
 
-  clearStorage(){
+  clearStorage(): void {
     sessionStorage.clear();
   }
 

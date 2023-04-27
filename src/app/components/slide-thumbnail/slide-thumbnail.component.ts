@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 import { Design } from 'src/app/interfaces/design.interface';
 
 @Component({

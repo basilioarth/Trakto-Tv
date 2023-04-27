@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { LoginReturn } from 'src/app/interfaces/login-return.interface';
+
 import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
@@ -21,7 +22,7 @@ export class LoginComponent {
     this.gotInternalError = false;
   }
 
-  onSubmit(f: NgForm){
+  onSubmit(f: NgForm): void {
     this.isSubmitting = true;
     this.isUnauthorized = false;
     this.gotInternalError = false;

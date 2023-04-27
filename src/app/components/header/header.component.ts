@@ -8,17 +8,14 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   @Input()
-  theme: string;
-
+  public theme: string;
   @Input()
-  backgroundColor: string;
-
+  public backgroundColor: string;
   @Input()
-  showChangeEnvironmentOption: boolean;
+  public showChangeEnvironmentOption: boolean;
 
-  color: string;
-
-  date: string;
+  public color: string;
+  public date: string;
 
   constructor(private router: Router){
     this.theme = "";
@@ -38,11 +35,11 @@ export class HeaderComponent implements OnInit {
     this.date = this.getCurrentDate();
   }
 
-  changeEnvironment(){
+  changeEnvironment(): void {
     this.router.navigate(['opening']);
   }
 
-  getCurrentDate():string {
+  getCurrentDate(): string {
     var date = new Date();
     return date.toLocaleDateString('pt');
   }

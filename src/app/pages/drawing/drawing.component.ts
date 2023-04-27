@@ -7,15 +7,16 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class DrawingComponent implements OnInit {
   @ViewChild('canvas', { static: true })
-  canvas!: ElementRef<HTMLCanvasElement>;
-  ctx!: CanvasRenderingContext2D;
-  isErasing: boolean;
-  cursorType: string;
-
+  
+  private canvas!: ElementRef<HTMLCanvasElement>;
   private isDrawing: boolean;
   private lastX: number;
   private lastY: number;
   private hue: number ;
+
+  public ctx!: CanvasRenderingContext2D;
+  public isErasing: boolean;
+  public cursorType: string;
 
   constructor() {
     this.isDrawing  = false;
@@ -83,7 +84,7 @@ export class DrawingComponent implements OnInit {
     }
   }
 
-  limpar(): void {
+  toClean(): void {
     this.ctx.clearRect(0, 0, this.canvas.nativeElement.width, this.canvas.nativeElement.height);
   }
 
