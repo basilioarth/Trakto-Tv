@@ -121,6 +121,10 @@
     color: var(--brand-trakto);
 }
 
+.form-container .alert {
+    margin: 16px 0px 16px 0px;
+}
+
 .form-container button {
     display: flex;
     flex-direction: row;
@@ -160,5 +164,13 @@
 @media (max-width: 325px) {
     .form-container, .form-container button {
         width: 200px;
+    }
+
+    #emailInputLabel  {
+        margin-top: 12px;
+    }
+
+    .form-container button {
+        margin-bottom: -32px;
     }
 }

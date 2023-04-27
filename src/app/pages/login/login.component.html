@@ -5,11 +5,17 @@
         <form #f="ngForm" (ngSubmit)="onSubmit(f)" ngNativeValidate>
             <div class="form-group">
                 <input name="email" type="email" class="form-control" id="emailInput" placeholder="Digite o seu e-mail" required="true" autocomplete="off" ngModel>
-                <label for="emailInput">Email</label>
+                <label id="emailInputLabel" for="emailInput">Email</label>
             </div>
             <div class="form-group">
                 <input name="password" type="password" class="form-control" id="passwordInput" placeholder="Digite a sua senha" required="true" autocomplete="off" ngModel>
-                <label for="passwordInput">Senha</label>
+                <label id="passwordInputLabel" for="passwordInput">Senha</label>
+            </div>
+            <div *ngIf="isUnauthorized" class="alert alert-warning" role="alert">
+                <strong>Dados de acesso incorretos!</strong><br>Por favor, verifique suas credenciais e tente novamente.
+            </div>
+            <div *ngIf="gotInternalError" class="alert alert-danger" role="alert">
+                <strong>Ocorreu um erro interno!</strong><br>Pedimos desculpas. Por favor, tente novamente mais tarde.
             </div>
             <button *ngIf="!isSubmitting" type="submit">Entrar</button>
             <button *ngIf="isSubmitting" type="submit"><i class="fa-solid fa-circle-notch fa-spin"></i>Entrando...</button>

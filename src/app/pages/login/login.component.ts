@@ -12,13 +12,19 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class LoginComponent {
   public isSubmitting: boolean;
+  public isUnauthorized: boolean;
+  public gotInternalError: boolean;
 
   constructor(private authService: AuthService, private router: Router){
     this.isSubmitting = false;
+    this.isUnauthorized = false;
+    this.gotInternalError = false;
   }
 
   onSubmit(f: NgForm){
     this.isSubmitting = true;
+    this.isUnauthorized = false;
+    this.gotInternalError = false;
     
     this.authService.signin(f.value.email, f.value.password).subscribe({
       next: (response: string) => {
@@ -29,7 +35,13 @@ export class LoginComponent {
         this.router.navigate(['opening']);
       },
       error: (err) => {
-        console.log(err);
+        this.isSubmitting = false;
+
+        if(err.status == 401){
+          this.isUnauthorized = true;
+        } else {
+          this.gotInternalError = true;
+        }
       },
       complete: () => {this.isSubmitting = false}
     });
