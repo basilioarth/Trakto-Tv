@@ -12,4 +12,8 @@ export class OpeningComponent {
   navigateToCourseware(){
     this.router.navigate(['courseware']);
   }
+
+  navigateToDrawing(){
+    this.router.navigate(['drawing']);
+  }
 }

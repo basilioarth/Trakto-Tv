@@ -1,0 +1,17 @@
+<header-component [theme]="'ligth'" [backgroundColor]="'var(--neutral-white)'" [showChangeEnvironmentOption]="true"></header-component>
+<div class="canvas-container">
+    <canvas #canvas class="canvas" id="canvas" [ngStyle]="{'cursor': cursorType}"></canvas>
+    <div class="options-container">
+        <div *ngIf="isErasing" class="erasing-button-on" (click)="setErasing(false)">Borracha</div>
+        <div *ngIf="!isErasing" class="erasing-button-off" (click)="setErasing(true)">Borracha</div>
+        <div class="color">
+            <input [ngModel]="ctx.strokeStyle" type="color" (ngModelChange)="changeColor($event)" class="color-input">
+            <div class="color-text" [ngStyle]="{'color': ctx.strokeStyle}">Cor</div>
+        </div>
+        <div class="lineWidth">
+            <input [ngModel]="ctx.lineWidth" type="range" id="lineWidth" name="lineWidth" min="5" max="30" (ngModelChange)="changeLineWidth($event)">
+            <label for="lineWidth">{{ctx.lineWidth}}px</label>
+        </div>
+        <div class="clear-button" (click)="limpar()">Limpar</div>
+    </div>
+</div>
